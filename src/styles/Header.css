@@ -1,0 +1,218 @@
+/* Header Component - Frontend Mentor Design */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  animation: slideDown 0.6s ease-out;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 320px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  left: -20px;
+}
+
+.logo-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Units Button */
+.units-button-container {
+  position: relative;
+}
+
+.units-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.units-button:hover {
+  background-color: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.units-button:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+.units-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.dropdown-icon {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Units Dropdown */
+.units-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 240px;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  animation: slideDown 0.2s ease-out;
+}
+
+.dropdown-header {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--divider-color);
+}
+
+/* Units Section */
+.units-section {
+  margin-bottom: 1rem;
+}
+
+.units-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.unit-option {
+  width: 100%;
+  display: flex;
+  justify-content: space-between !important;
+  align-items: start;
+  padding: 0.75rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  color: white !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: left;
+  gap: 1rem;
+  font-size: 14px !important;
+}
+
+.unit-option:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.unit-option.active {
+  background-color: rgba(86, 113, 240, 0.15);
+}
+
+.checkmark {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .header {
+    margin-bottom: 2rem;
+  }
+  
+  .logo-icon {
+    width: 280px;
+    height: 28px;
+    position: absolute;
+    left: -50px;
+  }
+  
+  .logo-text {
+    font-size: 1rem;
+  }
+  
+  .units-button {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.875rem;
+  }
+  
+  .units-dropdown {
+    min-width: 220px;
+    right: -1rem;
+  }
+}
+
+@media (max-width: 400px) {
+   .logo-icon {
+    width: 280px;
+    height: 28px;
+    position: absolute;
+    left: -50px;
+  }
+  .logo-text {
+    font-size: 0.9375rem;
+  }
+  
+  .units-button span {
+    display: none;
+  }
+  
+  .units-dropdown {
+    right: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .logo-icon {
+    width: 240px;
+    height: 24px;
+    position: absolute;
+  left: -50px;
+  }
+  
+  .units-button {
+    padding: 0.5rem;
+  }
+  
+  .units-dropdown {
+    min-width: 200px;
+    padding: 0.875rem;
+  }
+}

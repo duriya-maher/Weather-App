@@ -1,0 +1,234 @@
+/* State Components - Frontend Mentor Design */
+
+.state-container {
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.state-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Loading State */
+.loading-state .state-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+.loading-state .state-text {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+/* Error State */
+.error-state {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-state .state-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 2rem;
+}
+
+.state-heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  padding-bottom: 12px;
+}
+
+.state-text {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 500px;
+    padding-bottom: 15px;
+
+}
+
+.retry-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-button:hover {
+  background-color: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.retry-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* No Results State */
+.no-results-state .state-heading {
+  margin-bottom: 0;
+}
+
+/* Header in State Pages */
+.state-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.state-container .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.state-container .logo-icon {
+  width: 320px;
+  height: 32px;
+}
+
+.state-container .logo-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.state-container .units-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.state-container .units-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.state-container .dropdown-icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .state-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .state-content {
+    padding: 3rem 1.5rem;
+  }
+  
+  .state-heading {
+    font-size: 1.75rem;
+  }
+  
+  .state-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .state-content {
+    padding: 2.5rem 1rem;
+  }
+  
+  .error-state .state-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .state-heading {
+    font-size: 1.5rem;
+  }
+  
+  .state-text {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .retry-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .state-container {
+    padding: 1.25rem 0.875rem;
+  }
+  
+  .state-content {
+    padding: 2rem 0.75rem;
+  }
+  
+  .state-heading {
+    font-size: 1.375rem;
+  }
+  
+  .state-text {
+    font-size: 0.875rem;
+  }
+  
+  .state-container .logo-text {
+    font-size: 1rem;
+  }
+  
+  .state-container .units-button span {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .state-content {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .state-heading {
+    font-size: 1.25rem;
+  }
+  
+  .error-state .state-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .loading-state .state-icon {
+    width: 48px;
+    height: 48px;
+  }
+}

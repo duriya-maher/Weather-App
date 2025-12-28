@@ -1,0 +1,112 @@
+/* WeatherMetrics Component - Frontend Mentor Design */
+
+.weather-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr)  ;
+  animation: fadeIn 0.8s ease-out 0.5s both;
+  padding-top: 13px;
+  padding-bottom: 20px;
+}
+
+.metric-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.metric-card:hover {
+  background-color: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  padding-bottom: 18px;
+}
+
+.metric-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .weather-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .weather-metrics {
+        grid-template-columns: repeat(2, 1fr) !important;   
+
+  }
+  
+  .metric-card {
+    padding: 1rem;
+  }
+  
+  .metric-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .weather-metrics {        
+         grid-template-columns: repeat(2, 1fr) !important;   
+
+  }
+  .metric-card {
+    padding: 0.875rem;
+  }
+  
+  .metric-label {
+    font-size: 0.8125rem;
+  }
+  
+  .metric-value {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .weather-metrics {
+     grid-template-columns: repeat(2, 1fr) !important;  
+
+  }
+  
+  .metric-card {
+    padding: 0.75rem;
+  }
+  
+  .metric-value {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 320px) {
+
+   .weather-metrics {        
+        grid-template-columns: repeat(2, 1fr) !important;  
+
+  }
+  .metric-card {
+    padding: 0.625rem;
+  }
+  
+  .metric-label {
+    font-size: 0.75rem;
+  }
+  
+  .metric-value {
+    font-size: 1.125rem;
+  }
+}

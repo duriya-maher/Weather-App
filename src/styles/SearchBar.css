@@ -1,0 +1,209 @@
+/* SearchBar Component - Frontend Mentor Design */
+
+.search-container {
+  display: flex;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  animation: fadeIn 0.8s ease-out 0.3s both;
+  position: relative; 
+  z-index: 100; 
+}
+
+.search-input-wrapper {
+  flex: 1;
+  position: relative;
+  z-index: 1001;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-input:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.search-input:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(86, 113, 240, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Search Progress State */
+.search-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  animation: slideDown 0.2s ease-out;
+}
+
+.loading-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+/* Search Dropdown */
+.search-dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  animation: slideDown 0.2s ease-out;
+  
+}
+
+.search-result-item {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--divider-color);
+  color: rgb(231, 229, 229) !important;
+  font-size: 0.9375rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+    justify-content: flex-start; 
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.search-result-item:focus-visible {
+  background-color: rgba(255, 255, 255, 0.05);
+  outline: 2px solid var(--primary-blue);
+  outline-offset: -2px;
+}
+
+/* Search Button */
+.search-button {
+  padding: 1rem 2rem;
+  background-color: var(--primary-blue);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.search-button:hover {
+  background-color: var(--primary-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(86, 113, 240, 0.4);
+}
+
+.search-button:active {
+  transform: translateY(0);
+}
+
+.search-button:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+  }
+  
+  .search-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-container {
+    margin-bottom: 2rem;
+  }
+  
+  .search-input {
+    padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+    font-size: 0.9375rem;
+  }
+  
+  .search-icon {
+    left: 0.875rem;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .search-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .search-container {
+    margin-bottom: 1.75rem;
+  }
+  
+  .search-input {
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .search-button {
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-container {
+    margin-bottom: 1.5rem;
+  }
+}
